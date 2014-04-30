@@ -1,0 +1,24 @@
+<head>
+  <title>template-as-blocks-behaviour</title>
+</head>
+
+<body>
+  {{> A}}
+</body>
+
+<template name="A">
+  {{#with data='A-data'}}
+    {{#B}}
+      {{helper}}
+      {{data}}
+    {{/B}}
+  {{/with}}
+</template>
+
+<template name="B">
+  {{#with data='B-data'}}
+    {{helper}}
+    {{data}}
+    {{> UI.contentBlock}}
+  {{/with}}
+</template>
